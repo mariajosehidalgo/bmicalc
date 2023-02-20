@@ -24,12 +24,12 @@ private BMICalcImpl bmi;
 	@Test
 	@DisplayName("TEST CALCULO BMI")
 	public void test1() {
-		assertEquals(23.62, bmi.bmi(62, 1.62));
-		assertEquals(19.36, bmi.bmi(54, 1.67));
-		assertEquals(27.77, bmi.bmi(40, 1.20));
-		assertEquals(31.21, bmi.bmi(12, 0.62));
-		assertEquals(26.87, bmi.bmi(90, 1.83));
-		assertEquals(25.09, bmi.bmi(70, 1.67));
+		assertEquals(23.85, bmi.bmi(62.58, 1.62));
+		assertEquals(19.36, bmi.bmi(54.00, 1.67));
+		assertEquals(27.78, bmi.bmi(40.00, 1.20));
+		assertEquals(31.22, bmi.bmi(12.00, 0.62));
+		assertEquals(26.87, bmi.bmi(90.00, 1.83));
+		assertEquals(25.10, bmi.bmi(70.00, 1.67));
 	}
 	
 	@Test
@@ -84,16 +84,16 @@ private BMICalcImpl bmi;
 	
 	@Test
 	@DisplayName("TEST CALCULO ABDOMINALOBESITY")
-	public void test9() {
-		assertTrue(bmi.abdominalObesity(91, 'M'));
-		assertTrue(bmi.abdominalObesity(100, 'M'));
-		assertTrue(bmi.abdominalObesity(98, 'F'));
-		assertTrue(bmi.abdominalObesity(90, 'F'));
-		assertTrue(bmi.abdominalObesity(81, 'F'));
-		assertFalse(bmi.abdominalObesity(90, 'M'));
-		assertFalse(bmi.abdominalObesity(85, 'M'));
-		assertFalse(bmi.abdominalObesity(80, 'F'));
-		assertFalse(bmi.abdominalObesity(78, 'F'));
-		assertFalse(bmi.abdominalObesity(70, 'F'));
+	public void test9() throws Exception {
+		assertTrue(bmi.abdominalObesity(91.2, 'M'));
+		assertTrue(bmi.abdominalObesity(100.7, 'M'));
+		assertTrue(bmi.abdominalObesity(98.4, 'F'));
+		assertTrue(bmi.abdominalObesity(90.2, 'F'));
+		assertTrue(bmi.abdominalObesity(81.8, 'F'));
+		assertFalse(bmi.abdominalObesity(90.0, 'M'));
+		assertFalse(bmi.abdominalObesity(85.3, 'M'));
+		assertFalse(bmi.abdominalObesity(80.5, 'F'));
+		assertFalse(bmi.abdominalObesity(78.1, 'F'));
+		assertFalse(bmi.abdominalObesity(70.6, 'F'));
 	}
 }

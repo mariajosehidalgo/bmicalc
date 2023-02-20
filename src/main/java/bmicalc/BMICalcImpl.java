@@ -6,7 +6,10 @@ public class BMICalcImpl implements BMICalc {
 		if(mass<=0 || height<=0) {
 			throw new RuntimeException("La masa y la altura deben ser valores positivos");
 		}
-		return Math.round(mass/(Math.pow(height, 2)*10))/10;
+		double bmi = mass/Math.pow(height, 2);
+		double round=Math.round(bmi*100);
+		double bmiround=round/100;
+		return bmiround;
 	}
 
 	public String category(double bmi) {
@@ -23,15 +26,14 @@ public class BMICalcImpl implements BMICalc {
 		return str;
 	}
 
-	public boolean abdominalObesity(double waistCircumference, char gender) {
+	public boolean abdominalObesity(double waistCircumference, char gender) throws Exception {
 		if (gender != 'M' || gender != 'F') {
-			throw new RuntimeException("El género debe ser Masculino (M) o femenino(F)");
-		}
-		if(waistCircumference<=0) {
-			throw new RuntimeException("El radio de circunferencia debe ser un valor positivo");
+			throw new Exception("El género debe ser Masculino (M) o femenino(F)");
+		} else if(waistCircumference<=0) {
+			throw new Exception("El radio de circunferencia debe ser un valor positivo");
 		}
 		boolean obese = false;
-		if(waistCircumference > 90) {
+		if(waistCircumference > 90 && gender == 'M') {
 			obese = true;
 		} else if (waistCircumference > 80 && gender == 'F') {
 			obese = true;

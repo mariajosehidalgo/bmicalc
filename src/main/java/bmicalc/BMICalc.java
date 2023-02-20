@@ -33,6 +33,7 @@ public interface BMICalc {
 	 * @param waistCircumference	Waist circumference.
 	 * @param gender				Male ('M') or Female ('F').
 	 * @return						True if the person has abdominal obesity, false otherwise.
+	 * @throws Exception 
 	 */
-	public boolean abdominalObesity(double waistCircumference, char gender);
+	public boolean abdominalObesity(double waistCircumference, char gender) throws Exception;
 }
