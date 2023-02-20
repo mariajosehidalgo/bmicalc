@@ -77,14 +77,23 @@ private BMICalcImpl bmi;
 	@Test
 	@DisplayName("BMI>30")
 	public void test8() {
-		assertEquals("OVERWEIGHT", bmi.category(30.1));
-		assertEquals("OVERWEIGHT", bmi.category(33.4));
-		assertEquals("OVERWEIGHT", bmi.category(37.8));
+		assertEquals("OBESE", bmi.category(30.1));
+		assertEquals("OBESE", bmi.category(33.4));
+		assertEquals("OBESE", bmi.category(37.8));
 	}
 	
 	@Test
 	@DisplayName("TEST CALCULO ABDOMINALOBESITY")
 	public void test9() {
-		
+		assertTrue(bmi.abdominalObesity(91, 'M'));
+		assertTrue(bmi.abdominalObesity(100, 'M'));
+		assertTrue(bmi.abdominalObesity(98, 'F'));
+		assertTrue(bmi.abdominalObesity(90, 'F'));
+		assertTrue(bmi.abdominalObesity(81, 'F'));
+		assertFalse(bmi.abdominalObesity(90, 'M'));
+		assertFalse(bmi.abdominalObesity(85, 'M'));
+		assertFalse(bmi.abdominalObesity(80, 'F'));
+		assertFalse(bmi.abdominalObesity(78, 'F'));
+		assertFalse(bmi.abdominalObesity(70, 'F'));
 	}
 }
