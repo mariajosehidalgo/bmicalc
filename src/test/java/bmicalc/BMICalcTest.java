@@ -35,43 +35,51 @@ private BMICalcImpl bmi;
 	@Test
 	@DisplayName("BMI<18.5")
 	public void test2() {
-		
+		assertEquals("UNDERWEIGHT", bmi.category(15.0));
+		assertEquals("UNDERWEIGHT", bmi.category(17.7));
+		assertEquals("UNDERWEIGHT", bmi.category(18.4));
 	}
 	
 	@Test
 	@DisplayName("BMI=18.5")
 	public void test3() {
-		
+		assertEquals("NORMAL", bmi.category(18.5));
 	}
 	
 	@Test
 	@DisplayName("18.5<BMI<=24.9")
 	public void test4() {
-		
+		assertEquals("NORMAL", bmi.category(18.6));
+		assertEquals("NORMAL", bmi.category(22.7));
+		assertEquals("NORMAL", bmi.category(24.9));
 	}
 	
 	@Test
 	@DisplayName("BMI=25.0")
 	public void test5() {
-		
+		assertEquals("OVERWEIGHT", bmi.category(25.0));
 	}
 	
 	@Test
 	@DisplayName("25.0<BMI<=29.9")
 	public void test6() {
-		
+		assertEquals("OVERWEIGHT", bmi.category(25.1));
+		assertEquals("OVERWEIGHT", bmi.category(28.1));
+		assertEquals("OVERWEIGHT", bmi.category(29.9));
 	}
 	
 	@Test
 	@DisplayName("BMI=30.0")
 	public void test7() {
-		
+		assertEquals("OBESE", bmi.category(30.0));
 	}
 	
 	@Test
 	@DisplayName("BMI>30")
 	public void test8() {
-		
+		assertEquals("OVERWEIGHT", bmi.category(30.1));
+		assertEquals("OVERWEIGHT", bmi.category(33.4));
+		assertEquals("OVERWEIGHT", bmi.category(37.8));
 	}
 	
 	@Test
