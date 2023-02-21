@@ -92,8 +92,20 @@ private BMICalcImpl bmi;
 		assertTrue(bmi.abdominalObesity(81.8, 'F'));
 		assertFalse(bmi.abdominalObesity(90.0, 'M'));
 		assertFalse(bmi.abdominalObesity(85.3, 'M'));
-		assertFalse(bmi.abdominalObesity(80.5, 'F'));
+		assertFalse(bmi.abdominalObesity(80.0, 'F'));
 		assertFalse(bmi.abdominalObesity(78.1, 'F'));
 		assertFalse(bmi.abdominalObesity(70.6, 'F'));
+	}
+	
+	@Test
+	@DisplayName("TEST PRUEBA DE SALTO DE ERRORES")
+	public void exceptionTesting() throws Exception{
+		Exception exc = assertThrows(Exception.class, ()->bmi.bmi(46.0, 0.0));
+		Exception exc1 = assertThrows(Exception.class, ()->bmi.bmi(0.0, 1.20));
+		Exception exc2 = assertThrows(Exception.class, ()->bmi.bmi(0.0, 0.0));
+		Exception exc3 = assertThrows(Exception.class, ()->bmi.bmi(-46.0, -1.45));
+		Exception exc4 = assertThrows(Exception.class, ()->bmi.abdominalObesity(91.2, 'K'));
+		Exception exc5 = assertThrows(Exception.class, ()->bmi.abdominalObesity(-23.3, 'K'));
+		Exception exc6 = assertThrows(Exception.class, ()->bmi.abdominalObesity(-90.8, 'M'));
 	}
 }
