@@ -10,8 +10,9 @@ public interface BMICalc {
 	 * @param mass 	 Weight of the person.
 	 * @param height Height of the person.
 	 * @return 		 The Body Mass Index (BMI) value.
+	 * @throws Exception 
 	 */
-	public double bmi(double mass, double height);
+	public double bmi(double mass, double height) throws Exception;
 	
 	/**
 	 * Categorize a person according to the BMI category:

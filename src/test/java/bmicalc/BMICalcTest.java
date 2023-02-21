@@ -23,13 +23,13 @@ private BMICalcImpl bmi;
 	
 	@Test
 	@DisplayName("TEST CALCULO BMI")
-	public void test1() {
-		assertEquals(23.85, bmi.bmi(62.58, 1.62));
-		assertEquals(19.36, bmi.bmi(54.00, 1.67));
-		assertEquals(27.78, bmi.bmi(40.00, 1.20));
-		assertEquals(31.22, bmi.bmi(12.00, 0.62));
-		assertEquals(26.87, bmi.bmi(90.00, 1.83));
-		assertEquals(25.10, bmi.bmi(70.00, 1.67));
+	public void test1() throws Exception {
+		assertEquals(23.85, ((Math.round((bmi.bmi(62.58, 1.62))*100.0)))/100.0);
+		assertEquals(19.54, ((Math.round((bmi.bmi(54.49, 1.67))*100.0)))/100.0);
+		assertEquals(27.99, ((Math.round((bmi.bmi(40.30, 1.20))*100.0)))/100.0);
+		assertEquals(32.93, ((Math.round((bmi.bmi(12.66, 0.62))*100.0)))/100.0);
+		assertEquals(27.44, ((Math.round((bmi.bmi(91.89, 1.83))*100.0)))/100.0);
+		assertEquals(25.10, ((Math.round((bmi.bmi(70.00, 1.67))*100.0)))/100.0);
 	}
 	
 	@Test
@@ -100,12 +100,12 @@ private BMICalcImpl bmi;
 	@Test
 	@DisplayName("TEST PRUEBA DE SALTO DE ERRORES")
 	public void exceptionTesting() throws Exception{
-		Exception exc = assertThrows(Exception.class, ()->bmi.bmi(46.0, 0.0));
-		Exception exc1 = assertThrows(Exception.class, ()->bmi.bmi(0.0, 1.20));
-		Exception exc2 = assertThrows(Exception.class, ()->bmi.bmi(0.0, 0.0));
-		Exception exc3 = assertThrows(Exception.class, ()->bmi.bmi(-46.0, -1.45));
-		Exception exc4 = assertThrows(Exception.class, ()->bmi.abdominalObesity(91.2, 'K'));
-		Exception exc5 = assertThrows(Exception.class, ()->bmi.abdominalObesity(-23.3, 'K'));
-		Exception exc6 = assertThrows(Exception.class, ()->bmi.abdominalObesity(-90.8, 'M'));
+		assertThrows(Exception.class, ()->bmi.bmi(46.0, 0.0));
+		assertThrows(Exception.class, ()->bmi.bmi(0.0, 1.20));
+		assertThrows(Exception.class, ()->bmi.bmi(0.0, 0.0));
+		assertThrows(Exception.class, ()->bmi.bmi(-46.0, -1.45));
+		assertThrows(Exception.class, ()->bmi.abdominalObesity(91.2, 'K'));
+		assertThrows(Exception.class, ()->bmi.abdominalObesity(-23.3, 'K'));
+		assertThrows(Exception.class, ()->bmi.abdominalObesity(-90.8, 'M'));
 	}
 }

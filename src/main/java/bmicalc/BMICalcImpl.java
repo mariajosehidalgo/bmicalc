@@ -2,14 +2,12 @@ package bmicalc;
 
 public class BMICalcImpl implements BMICalc {
 
-	public double bmi(double mass, double height) {
+	public double bmi(double mass, double height) throws Exception {
 		if(mass<=0 || height<=0) {
-			throw new RuntimeException("La masa y la altura deben ser valores positivos");
+			throw new Exception("La masa y la altura deben ser valores positivos");
 		}
 		double bmi = mass/Math.pow(height, 2);
-		double round=Math.round(bmi*100);
-		double bmiround=round/100;
-		return bmiround;
+		return bmi;
 	}
 
 	public String category(double bmi) {
