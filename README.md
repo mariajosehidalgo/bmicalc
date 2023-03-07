@@ -22,6 +22,8 @@ TEST 14: GENERO M O F Y CIRCUNFERENCIA > 0 --> ABDOMINALOBESITY
 https://github.com/mariajosehidalgo/bmicalc/blob/main/PRACTICA2.jpg
 
 
+PRACTICA 2. ESPECIFICACION DE CASO DE USO
+
 Caso de uso: Calcular BMI 
 Actor Primario: Paciente
 Objetivo: Determinar el BMI del paciente
