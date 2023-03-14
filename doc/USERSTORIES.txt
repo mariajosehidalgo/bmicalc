@@ -1,0 +1,14 @@
+-- BMI
+Como usuario de la calculadora, yo quiero introducir mi masa corporal y mi altura para poder obtener el cálculo de mi BMI.
+
+
+-- CATEGORY
+Como usuario de la calculadora, yo quiero introducir mi BMI para poder obtener una calificacion sobre este.
+
+
+-- ABDOMINALOBESITY
+Como usuario de la calculadora, yo quiero introducir mi genero y el valor de mi circunferencia abdominal para poder saber si sufro o no obesidad abdominal.
+
+
+--MASAGRASA
+Como usuario de la calculadora, yo quiero introducir mi genero, longitud de cintura, cadera y cuello para poder obtener la cantidad de masa grasa de mi cuerpo.
