@@ -16,29 +16,30 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
+
 @tag
 Feature: Calculadora BMI
   Como usuario de la calculadora, yo quiero introducir mi masa corporal y mi altura para poder obtener el cálculo de mi BMI.
 
   @tag1
-  Scenario: Los datos son validos y devuelve un resultado
-    Given La calculadora pide los valores de masa y altura
-    When El usuario introduce valores validos de <masa> y <altura>
+  Scenario Outline: Los datos son validos y devuelve un resultado
+    Given Tenemos inicializada la calculadora
+    When El usuario introduce valores validos de <mass> y <height>
     Then La calculadora devuelve el valor del <bmi> del usuario
     
     Examples: 
-      | masa | altura | bmi |
-      |64.0  |1.62    |24.39|
-      |50.3  |1.32    |28.87|
-      |109.8 |1.82    |33.15|
-      |12.39 |0.78    |20.36|
-      |54.32 |1.75    |17.73|
+      |  mass | height |  bmi  |
+      | 64.0  | 1.62   | 24.39 |
+      | 50.3  | 1.32   | 28.87 |
+      | 109.8 | 1.82   | 33.15 |
+      | 12.39 | 0.78   | 20.36 |
+      | 54.32 | 1.75   | 17.73 |
       
       
     
   @tag2
   Scenario Outline: Los datos introducidos no tienen formato valido
-    Given La calculadora pide los valores de masa y altura
+    Given Tenemos inicializada la calculadora
     When El usuario introduce valores invalidos de <masa> y <altura>
     Then La calculadora lanza un error en el que informa que los datos no estan en un formato valido. Vuelve al menu original.
    
