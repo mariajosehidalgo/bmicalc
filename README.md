@@ -46,6 +46,82 @@ Escenario Principal:
 
 
 
+PRACTICA 3. BDD
 
+USERSTORIES
+-- BMI
+Como usuario de la calculadora, yo quiero introducir mi masa corporal y mi altura para poder obtener el cálculo de mi BMI.
+Escenario: los datos introducidos no tienen formato valido.
+Given 
+	Inicializada la calculadora.
+When
+	El usuario introduce datos no validos sobre la masa o la altura.
+Then
+	La calculadora lanza un error en el que informa que los datos no estan en un formato valido.
+	Vuelve al menu original.
+Escenario: los datos son validos y devuelve un resultado.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce valores validos de masa y altura.
+Then
+	La calculadora devuelve el valor del BMI del usuario.
+
+
+-- CATEGORY
+Como usuario de la calculadora, yo quiero introducir mi BMI para poder obtener una calificacion sobre este.
+Escenario: el usuario introduce un valor de BMI valido.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce un valor valido de BMI.
+Then
+	La calculadora devuelve una catalogalizacion con respecto al BMI.
+Escenario: los datos no son validos y dará un error.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce un valor no valido(negativo) de BMI.
+Then
+	La calculadora lanza un error en el que informa que los datos no estan en un formato valido.
+	Volvemos al menu principal.
+
+
+-- ABDOMINALOBESITY
+Como usuario de la calculadora, yo quiero introducir mi genero y el valor de mi circunferencia abdominal para poder saber si sufro o no obesidad abdominal.
+Escenario: el usuario introduce valores validos.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce valores validos sobre genero del usuario y el valor de su circunferencia abdomninal.
+Then
+	La calculadora devuelve true si sufre obesidad abdominal y false si no la sufre.
+Escenario: los datos no son validos y daria un error.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce valores no validos sobre genero del usuario o el valor de su circunferencia abdomninal.
+Then
+	La calculadora lanza un error en el que informa que los datos no estan en un formato valido.
+	Volvemos al menu principal.
+
+
+--MASAGRASA
+Como usuario de la calculadora, yo quiero introducir mi genero, longitud de cintura, cadera y cuello para poder obtener la cantidad de masa grasa de mi cuerpo.
+Escenario: el usuario introduce valores validos.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce valores validos sobre el genero, longitud de cintura, cadera y cuello del usuario.
+Then
+	La calculadora devuelve un valor de masa grasa.
+Escenario: los datos no son validos y daria un error.
+Given
+	Inicializada la calculadora.
+When
+	El usuario introduce valores no validos sobre el genero, longitud de cintura, cadera o cuello del usuario.
+Then
+	La calculadora lanza un error en el que informa que los datos no estan en un formato valido.
+	Volvemos al menu principal.
 
 
