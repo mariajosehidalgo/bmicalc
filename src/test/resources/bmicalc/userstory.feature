@@ -44,9 +44,9 @@ Feature: Calculadora BMI
     Then La calculadora lanza un error en el que informa que los datos no estan en un formato valido. Vuelve al menu original.
    
    	Examples: 
-      | masa | altura |
-      |64.0  |1.62    |
-      |50.3  |1.32    |
-      |109.8 |1.82    |
-      |12.39 |0.78    |
-      |54.32 |1.75    |
+      | masa | altura|
+      |-64.0 |1.62   |
+      |-50.3 |1.32   |
+      |-109.8|1.82   |
+      |12.39 |-0.78  |
+      |54.32 |-1.75  |

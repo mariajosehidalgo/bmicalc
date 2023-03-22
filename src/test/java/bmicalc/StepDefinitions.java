@@ -1,8 +1,9 @@
 package bmicalc;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+
 import bmicalc.NegativeValueException;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 
 public class StepDefinitions {
@@ -11,7 +12,8 @@ public class StepDefinitions {
 	private double result ;
 	private boolean raiseException;
 	
-	@Before
+	@SuppressWarnings("null")
+	@BeforeEach
 	public void init() {
 		bmi = null;
 		result = (Double) null;
@@ -30,7 +32,7 @@ public class StepDefinitions {
 
 	@Then("La calculadora devuelve el valor del {double} del usuario")
 	public void la_calculadora_devuelve_el_valor_del_del_usuario(Double double1) {
-		Assertions.assertEquals(double1, result);
+		Assertions.assertEquals(double1, result, 0.01);
 	}
 
 	@When("El usuario introduce valores invalidos de {double} y {double}")
