@@ -19,7 +19,7 @@ TEST 14: GENERO M O F Y CIRCUNFERENCIA > 0 --> ABDOMINALOBESITY
 *EXCEPTIONTESTING: TEST PRUEBA DE SALTO DE ERRORES
 
 
-https://github.com/mariajosehidalgo/bmicalc/blob/main/PRACTICA2.jpg
+<image src="https://github.com/mariajosehidalgo/bmicalc/blob/main/PRACTICA2.jpg" alt="">
 
 
 PRACTICA 2. ESPECIFICACION DE CASO DE USO
@@ -50,7 +50,7 @@ PRACTICA 3. BDD
 
 USERSTORIES
 -- BMI
-Como usuario de la calculadora, yo quiero introducir mi masa corporal y mi altura para poder obtener el cálculo de mi BMI.
+Como usuario de la calculadora, yo quiero introducir mi masa corporal y mi altura para poder obtener el c lculo de mi BMI.
 Escenario: los datos introducidos no tienen formato valido.
 Given 
 	Inicializada la calculadora.
@@ -77,7 +77,7 @@ When
 	El usuario introduce un valor valido de BMI.
 Then
 	La calculadora devuelve una catalogalizacion con respecto al BMI.
-Escenario: los datos no son validos y dará un error.
+Escenario: los datos no son validos y dar  un error.
 Given
 	Inicializada la calculadora.
 When
@@ -123,5 +123,15 @@ When
 Then
 	La calculadora lanza un error en el que informa que los datos no estan en un formato valido.
 	Volvemos al menu principal.
+
+
+PRACTICA 4. IMPLEMENTACION GUI.
+
+
+<image src="https://github.com/mariajosehidalgo/bmicalc/blob/doc/boceto.png" alt="">
+
+<image src="https://github.com/mariajosehidalgo/bmicalc/blob/doc/interfaz.png" alt="">
+
+
 
 
