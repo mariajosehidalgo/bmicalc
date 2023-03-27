@@ -3,6 +3,9 @@
 # BMI calculator
 A biomedical calculator for the body mass index (BMI) and other parameters.
 
+
+PRACTICA 1. BMI CALCULADORA.
+
 TEST 1: MASA NEGATIVA --> ERROR
 TEST 2: ALTURA NEGATIVA --> ERROR
 TEST 3: MASA Y ALTURA POSITIVA --> CALCULA BMI
@@ -125,7 +128,7 @@ Then
 PRACTICA 4. IMPLEMENTACION GUI.
 
 
-<image src="https://github.com/mariajosehidalgo/bmicalc/blob/doc/boceto.png" alt="">
+<image src="https://github.com/mariajosehidalgo/bmicalc/blob/main/boceto.jpg" alt="">
 
-<image src="https://github.com/mariajosehidalgo/bmicalc/blob/doc/interfaz.png" alt="">
+<image src="https://github.com/mariajosehidalgo/bmicalc/blob/main/interfaz.jpg" alt="">
 
