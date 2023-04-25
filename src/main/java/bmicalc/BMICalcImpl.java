@@ -1,6 +1,12 @@
 package bmicalc;
 
 public class BMICalcImpl implements BMICalc {
+	
+	private static BMICalcImpl instancia;
+	
+	private BMICalcImpl() {
+		
+	}
 
 	public double bmi(double mass, double height) throws Exception {
 		if(mass<=0 || height<=0) {
@@ -26,7 +32,7 @@ public class BMICalcImpl implements BMICalc {
 
 	public boolean abdominalObesity(double waistCircumference, char gender) throws Exception {
 		if (gender != 'M' && gender != 'F') {
-			throw new NegativeValueException("El género debe ser Masculino (M) o femenino(F)");
+			throw new NegativeValueException("El gï¿½nero debe ser Masculino (M) o femenino(F)");
 		} else if(waistCircumference<=0.0) {
 			throw new NegativeValueException("El radio de circunferencia debe ser un valor positivo");
 		}
@@ -39,6 +45,13 @@ public class BMICalcImpl implements BMICalc {
 			obese = false;
 		}
 		return obese;
+	}
+	
+	public static BMICalcImpl getInstancia() {
+		if(instancia == null) {
+			instancia = new BMICalcImpl();
+		}
+		return instancia;
 	}
 
 }
