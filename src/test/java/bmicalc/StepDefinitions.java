@@ -27,7 +27,7 @@ public class StepDefinitions {
 
 	@When("El usuario introduce valores validos de {double} y {double}")
 	public void el_usuario_introduce_valores_validos_de_y(Double double1, Double double2) throws Exception {
-		result = bmi.bmi(double1, double2);
+		result = bmi.calculateBodyMassIndex(double1, double2);
 	}
 
 	@Then("La calculadora devuelve el valor del {double} del usuario")
@@ -38,7 +38,7 @@ public class StepDefinitions {
 	@When("El usuario introduce valores invalidos de {double} y {double}")
 	public void el_usuario_introduce_valores_invalidos_de_y(Double double1, Double double2) throws Exception {
 		try {
-			result = bmi.bmi(double1, double2);
+			result = bmi.calculateBodyMassIndex(double1, double2);
 		} catch (NegativeValueException e) {
 			raiseException = true;
 		}

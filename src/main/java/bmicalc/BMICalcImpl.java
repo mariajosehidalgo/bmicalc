@@ -1,8 +1,9 @@
 package bmicalc;
 
-public class BMICalcImpl implements BMICalc {
+public class BMICalcImpl implements CardioVascularMetrics, MetabolicMetrics {
 
-	public double bmi(double mass, double height) throws Exception {
+	@Override
+	public double calculateBodyMassIndex(double mass, double height) throws Exception {
 		if(mass<=0 || height<=0) {
 			throw new NegativeValueException("La masa y la altura deben ser valores positivos");
 		}
@@ -10,33 +11,30 @@ public class BMICalcImpl implements BMICalc {
 		return bmi;
 	}
 
-	public String category(double bmi) {
-		String str = "";
+	@Override
+	public ObesityCategory getObesityCategory(double bmi) {
 		if(bmi<18.5) {
-			str = "UNDERWEIGHT";
+			return ObesityCategory.UNDERWEIGHT;
 		} else if (18.5 <= bmi && bmi < 25.0) {
-			str = "NORMAL";
+			return ObesityCategory.NORMAL;
 		} else if (25.0 <= bmi && bmi < 30.0) {
-			str = "OVERWEIGHT";
+			return ObesityCategory.OVERWEIGHT;
 		} else {
-			str = "OBESE";
+			return ObesityCategory.OBESE;
 		}
-		return str;
 	}
-
-	public boolean abdominalObesity(double waistCircumference, char gender) throws Exception {
-		if (gender != 'M' && gender != 'F') {
-			throw new NegativeValueException("El género debe ser Masculino (M) o femenino(F)");
+	
+	public boolean abdominalObesity(double waistCircumference, Gender gender) throws Exception {
+		if (gender != Gender.FEMALE && gender != Gender.MALE) {
+			throw new NegativeValueException("El g nero debe ser Masculino (M) o femenino(F)");
 		} else if(waistCircumference<=0.0) {
 			throw new NegativeValueException("El radio de circunferencia debe ser un valor positivo");
 		}
 		boolean obese = false;
-		if(waistCircumference > 90.0 && gender == 'M') {
+		if(waistCircumference > 90.0 && gender == Gender.MALE) {
 			obese = true;
-		} else if (waistCircumference > 80.0 && gender == 'F') {
+		} else if (waistCircumference > 80.0 && gender == Gender.FEMALE) {
 			obese = true;
-		} else {
-			obese = false;
 		}
 		return obese;
 	}

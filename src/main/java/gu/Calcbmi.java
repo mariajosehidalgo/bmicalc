@@ -15,6 +15,9 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 
+import bmicalc.Gender;
+import bmicalc.ObesityCategory;
+
 public class Calcbmi extends JFrame {
 
 	private JTextField resultadobmi;
@@ -168,13 +171,13 @@ public class Calcbmi extends JFrame {
 		return valor;
 	}
 	
-	public Character getInputValueGender() {
+	public Gender getInputValueGender() {
 		String genero = ((String) comboBoxgen.getSelectedItem()).strip();
-		Character valor = null;
+		Gender valor = null;
 		if (genero.equals("Femenino")) {
-			valor = 'F';
+			valor = Gender.FEMALE;
 		} else if (genero.equals("Masculino")) {
-			valor = 'M';
+			valor = Gender.MALE;
 		}
 		return valor;
 		
@@ -189,8 +192,8 @@ public class Calcbmi extends JFrame {
 		resultadobmi.setText(String.valueOf(res));
 	}
 	
-	public void setResutadoCateg(String res) {
-		resultadocateg.setText(res);
+	public void setResutadoCateg(ObesityCategory cat) {
+		resultadocateg.setText(cat+"");
 	}
 	
 	public void setResutadoAbdObs(String res) {

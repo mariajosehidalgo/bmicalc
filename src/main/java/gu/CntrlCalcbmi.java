@@ -22,26 +22,16 @@ public class CntrlCalcbmi implements ActionListener {
 			double altura = vista.getInputValueAltura();
 			double resbmi;
 			try {
-				resbmi = modelo.bmi(masa, altura);
-				String cat = modelo.category(resbmi);
-				String rescat = "";
-				if(cat.equalsIgnoreCase("UNDERWEIGHT")) {
-					rescat = "PESO BAJO";
-				} else if (cat.equalsIgnoreCase("OVERWEIGHT")) {
-					rescat = "SOBREPESO";
-				} else if (cat.equalsIgnoreCase("OBESE")) {
-					rescat = "OBESIDAD";
-				} else {
-					rescat = "NORMAL";
-				}
+				resbmi = modelo.calculateBodyMassIndex(masa, altura);
+				ObesityCategory cat = modelo.getObesityCategory(resbmi);
 				vista.setResutadoBMI(resbmi);
-				vista.setResutadoCateg(rescat);
+				vista.setResutadoCateg(cat);
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}		
 		}
 		else if (comando.equals("OBESIDAD ABDOMINAL")) {
-			char gender = vista.getInputValueGender();
+			Gender gender = vista.getInputValueGender();
 			double abdcirc = vista.getInputValueAbdCirc();
 			boolean boolabdobs = false;
 			String resabdobs = "";
